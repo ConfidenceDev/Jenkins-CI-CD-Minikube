@@ -28,6 +28,7 @@ spec:
   selector:
     app: cicd-app
   ports:
-    - port: 80 #The port the service id running in the cluster
+    - protocol: "TCP"
+      port: 8082 #The port the service id running in the cluster
       targetPort: 8082 #The port exposed by the service
   type: NodePort #Type of the service
