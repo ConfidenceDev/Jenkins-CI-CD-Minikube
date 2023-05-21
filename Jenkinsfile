@@ -31,9 +31,11 @@ pipeline {
             }
         }
         stage('SonarQube analysis'){
+            steps{
                 withSonarQubeEnv('sonar'){
                     sh "mvn sonar:sonar"
                 }
+            }
         }
         stage('Deploy to k8s'){
             steps{
